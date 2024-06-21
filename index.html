@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinibus</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+    <nav class="menu">
+        <a class="menu-logo" href="./index.html"><img src="./assets/imgs/logo.jpg" alt="Logo de Trinimap"></a>
+        <ul class="menu-principal">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./pages/nosotros.html">Sobre nosotros</a></li>
+            <li><a href="./pages/otro.html">Info</a></li>
+            <li><a href="./pages/login.html" class="button">Login</a></li>
+        </ul>
+    
+    </nav>
+    <main>
+        <div class="container">
+            <div id="map"></div>
+        </div>
+    </main>
+    
+
+    
+    <footer>
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([-33.5218204, -56.8963035], 15);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var recorrido = [
+            [-33.527661, -56.894799],
+            [-33.534929, -56.889608],
+            [-33.536124, -56.892093], 
+            [-33.535008, -56.899586],
+            [-33.527649, -56.898086],
+            [-33.524201, -56.897870],
+            [-33.524291, -56.894572],
+            [-33.523438, -56.894591],
+            [-33.523221, -56.899884],
+            [-33.517728, -56.899637],
+            [-33.517815, -56.897502],
+            [-33.516078, -56.897377],
+            [-33.516233, -56.893097],
+            [-33.520683, -56.893341],
+            [-33.520840, -56.888057],
+            [-33.517314, -56.887891],
+            [-33.517233459285364, -56.88986597476163],
+            [-33.512782891354114, -56.8896886221016],
+            [-33.512567, -56.895132],
+            [-33.510740, -56.895035],
+            [-33.510704, -56.896096],
+            [-33.506408, -56.895888],
+            [-33.506359, -56.897281],
+            [-33.50803065260551, -56.89735485465515],
+            [-33.50769273255444, -56.906688635511586],
+            [-33.51211033161995, -56.9069659288731],
+            [-33.51208840764403, -56.908920524954],
+            [-33.51301908844366, -56.90894468859833],
+            [-33.51334064092202, -56.89936557836742],
+            [-33.51334933156642, -56.899376001772666],
+            [-33.516888, -56.899558],
+            [-33.516607, -56.906097],
+            [-33.518394, -56.906201],
+            [-33.518295, -56.909189],
+            [-33.519256, -56.909233],
+            [-33.519390, -56.905161],
+            [-33.52305061335484, -56.90536649918345],
+            [-33.523048, -56.905366],
+            [-33.523330, -56.896732 ],
+            [-33.5242624459239, -56.89677769423646],
+            [-33.52433847087423, -56.89464533812836],
+            [-33.527685677297626, -56.89480507532198],
+        ];
+
+        var polyline = L.polyline(recorrido, { color: 'blue' }).addTo(map);
+
+        map.fitBounds(polyline.getBounds());
+    </script>
+</body>
+
+</html>
