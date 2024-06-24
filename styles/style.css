@@ -36,7 +36,7 @@ a.button {
 
 nav ul.menu-principal li:hover {
     transform: scale(1.1);
-       
+    
 }
 
 a,
@@ -46,7 +46,8 @@ a:visited {
 }
 
 nav a.menu-logo img {
-    width: 100px;
+    width: 80px;
+    height: 70px;
 }
 
 main {
@@ -61,9 +62,10 @@ main {
     height: 600px;
     width: 700px;
 }
+
 .container{
     padding: 20px;
-    background-color: orange;
+    background-color: white;
     border-radius: 8px;
 }
 
